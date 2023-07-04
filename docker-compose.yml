@@ -2,7 +2,7 @@ version: "3.8"
 services:
   backend:
     build: ./backend
-    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle install --path=vendor/bundle && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: /bin/sh -c "chmod +x entrypoint.sh && ./entrypoint.sh"
     ports:
       - "3000:3000"
     volumes:
@@ -11,6 +11,10 @@ services:
       - db
     tty: true
     stdin_open: true
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=password
   frontend:
     build: ./frontend
     command: sh -c "npm start"
