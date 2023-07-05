@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'Employee', at: 'auth'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: %i[create]
+      get 'users/me', to: 'users#show'  # 追加
+      resources :stores, only: %i[create]
+      post "/sign_in", to: "sessions#create"
+    end
+  end
 end
