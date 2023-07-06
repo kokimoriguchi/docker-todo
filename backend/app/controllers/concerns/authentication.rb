@@ -2,6 +2,8 @@ module Authentication
 
   private
 
+  #tokenを受け取り有効な物であればuser_idを返す。無効なtokenであればunauthorizedを返す
+  #各コントローラーでbefore_actionとして使用する
   def authenticate_user
     begin
       token = cookies[:token]

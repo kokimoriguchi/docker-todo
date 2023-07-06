@@ -12,4 +12,9 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    cookies.delete(:token)
+    render json: { status: "logout" }
+  end
+
 end

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { LoginHook } from "../hooks/loginHooks";
+import { LoginOutHook } from "../hooks/logout";
 
 const Login = () => {
   const staffNumberRef = useRef();
@@ -16,6 +17,10 @@ const Login = () => {
     LoginHook(userData);
     staffNumberRef.current.value = "";
     passwordRef.current.value = "";
+  };
+
+  const handleLogout = () => {
+    LoginOutHook();
   };
 
   return (
@@ -69,6 +74,14 @@ const Login = () => {
             Home
           </button>
         </Link>
+        <>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={handleLogout}
+          >
+            logout
+          </button>
+        </>
       </div>
     </div>
   );
