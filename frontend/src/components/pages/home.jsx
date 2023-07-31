@@ -22,8 +22,11 @@ function Home() {
             </button>
           </Link>
         </div>
-        <p>git practice</p>
-        <p>git practice</p>
+        <div className="flex flex-col">
+          <p>git practice</p>
+          <p>git practice</p>
+          <p>pull request</p>
+        </div>
       </div>
     </>
   );
