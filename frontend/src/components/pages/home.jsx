@@ -26,6 +26,7 @@ function Home() {
           <p>git practice</p>
           <p>git practice</p>
           <p>pull request</p>
+          <p>pull request</p>
         </div>
       </div>
     </>
