@@ -23,6 +23,7 @@ function Home() {
           </Link>
         </div>
         <p>git practice</p>
+        <p>git practice</p>
       </div>
     </>
   );
